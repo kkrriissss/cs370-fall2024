@@ -1,5 +1,4 @@
 # Assignment 3
 
-## Video Demonstration
+## Please download the .ipynb file locally
 
-[![Watch the video](https://via.placeholder.com/800x450.png?text=Click+to+Watch)](processed_video.mp4)
