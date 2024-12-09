@@ -1,0 +1,13 @@
+pymongo
+qdrant-client
+clearml
+gradio
+transformers
+torch
+torchvision
+torchaudio
+sentence-transformers
+requests
+numpy
+qdrant-client
+bs4
