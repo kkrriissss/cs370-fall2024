@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 import requests
 
-OLLAMA_API_URL = "http://172.17.0.1:54321/api/generate"
+OLLAMA_API_URL = "http://ollama:54321/api/generate"
 
 def retrieve_context(query, model_name="all-MiniLM-L6-v2", collection_name="articles"):
     model = SentenceTransformer(model_name)
