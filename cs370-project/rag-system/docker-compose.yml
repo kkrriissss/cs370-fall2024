@@ -1,0 +1,44 @@
+version: '3.9'
+
+networks:
+  rag_network:
+    driver: bridge
+
+services:
+  rag_app:
+    image: python:3.9-slim
+    container_name: rag_app
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: tail -f /dev/null
+    ports:
+      - "7860:7860"
+    networks:
+      - rag_network
+    stdin_open: true
+    tty: true
+
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - rag_network
+
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qdrant
+    ports:
+      - "6333:6333"
+    networks:
+      - rag_network
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "54321:11434"
+    networks:
+      - rag_network
